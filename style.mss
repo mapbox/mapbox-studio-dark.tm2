@@ -96,6 +96,7 @@ Map { background-color: @land; }
 #water {
   ::shadow {
     polygon-fill: mix(@land,@fill4,75);
+    
   }
   ::fill {
     // a fill and overlay comp-op lighten the polygon-
@@ -105,6 +106,7 @@ Map { background-color: @land; }
     // blurring reveals the polygon fill from ::shadow around
     // the edges of the water
     image-filters: agg-stack-blur(10,10);
+    image-filters-inflate: true;
   }
 }
 
