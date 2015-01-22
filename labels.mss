@@ -47,7 +47,7 @@
   [ldir='N'],[ldir='S'],[ldir='E'],[ldir='W'],
   [ldir='NE'],[ldir='SE'],[ldir='SW'],[ldir='NW'] {
     shield-file: url("shield/dot.svg");
-    shield-transform:scale(0.3,0.3);
+    shield-transform:scale(0.5,0.5);
     shield-unlock-image: true;
     shield-name: @name;
     shield-size: 12;
