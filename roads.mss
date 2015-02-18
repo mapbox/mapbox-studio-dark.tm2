@@ -23,7 +23,7 @@
 #bridge::fill[zoom>=11] {
   ['mapnik::geometry_type'=2] {
     line-color: @road;
-    line-width: 0.5;
+    line-width: 0.25;
     [zoom>=15] { line-width: 1; } 
     [class='path'] { line-dasharray: 2,2;}
     [class='major_rail'],

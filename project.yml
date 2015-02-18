@@ -14,7 +14,7 @@ center:
   - 50.8476
   - 4
 description: A monotone basemap that's easy to recolor.
-format: "png8:m=h"
+format: "png8:m=h:c=64"
 interactivity_layer: ''
 layers: 
   - landcover
@@ -30,7 +30,6 @@ layers:
   - road
   - bridge
   - admin
-  - country_label_line
   - country_label
   - marine_label
   - state_label
@@ -42,8 +41,8 @@ layers:
   - housenum_label
 maxzoom: 22
 minzoom: 0
-name: Mapbox Dark v1
-source: "mapbox:///mapbox.mapbox-terrain-v2,mapbox.mapbox-streets-v5"
+name: Mapbox Dark
+source: "mapbox:///mapbox.mapbox-terrain-v2,mapbox.mapbox-streets-v6"
 styles: 
   - style.mss
   - labels.mss
