@@ -13,9 +13,13 @@
 #road[zoom<11],
 #tunnel[zoom<11],
 #bridge[zoom<11] {
-    line-color: @road;
+  line-color: @road;
+  line-width: 0.25;
+  [class='motorway'][zoom>=5],
+  [class='main'][zoom>=6]{
     line-width: 0.5;
-  [class='motorway'] { line-width: 1;}
+  }
+  [class='motorway'][zoom>=6] { line-width: 1; }
 }
 
 #road::fill[zoom>=11],

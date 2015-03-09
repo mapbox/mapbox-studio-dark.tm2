@@ -1,39 +1,57 @@
-
-
 // Country labels //
-#country_label[zoom>=3] {
+#country_label[zoom>=2][zoom<=10] {
   text-name: @name;
   text-face-name: @sans_bd;
+  text-placement: point;
+  text-size: 10;
   text-fill: @text;
-  text-size: 12;
   text-halo-fill: @land;
   text-halo-radius: 1;
-  text-wrap-width: 50;
-  [zoom>=3][scalerank=1],
-  [zoom>=4][scalerank=2],
-  [zoom>=5][scalerank=3],
-  [zoom>=6][scalerank>3] {
-    text-size: 14;
+  text-halo-rasterizer: fast;
+  text-wrap-width: 20;
+  text-wrap-before: true;
+  text-line-spacing: -3;
+  [scalerank=1] {
+    [zoom=3]  { text-size: 12; text-wrap-width: 60; }
+    [zoom=4]  { text-size: 14; text-wrap-width: 90; }
+    [zoom=5]  { text-size: 20; text-wrap-width: 120; }
+    [zoom>=6] { text-size: 20; text-wrap-width: 120; }
   }
-  [zoom>=4][scalerank=1],
-  [zoom>=5][scalerank=2],
-  [zoom>=6][scalerank=3],
-  [zoom>=7][scalerank>3] {
-    text-size: 16;
+  [scalerank=2] {
+    [zoom=2]  { text-name: [code]; }
+    [zoom=3]  { text-size: 11; }
+    [zoom=4]  { text-size: 13; }
+    [zoom=5]  { text-size: 17; }
+    [zoom>=6] { text-size: 20; }
   }
-  [zoom>=6][scalerank=1],
-  [zoom>=7][scalerank=2],
-  [zoom>=8][scalerank>=3] {
-    text-size: 20;
+  [scalerank=3] {
+    [zoom=3]  { text-name: [code]; }
+    [zoom=4]  { text-size: 11; }
+    [zoom=5]  { text-size: 15; }
+    [zoom=6]  { text-size: 17; }
+    [zoom=7]  { text-size: 18; text-wrap-width: 60; }
+    [zoom>=8] { text-size: 20; text-wrap-width: 120; }
+  }
+  [scalerank=4] {
+    [zoom=5] { text-size: 13; }
+    [zoom=6] { text-size: 15; text-wrap-width: 60  }
+    [zoom=7] { text-size: 16; text-wrap-width: 90; }
+    [zoom=8] { text-size: 18; text-wrap-width: 120; }
+    [zoom>=9] { text-size: 20; text-wrap-width: 120; }
+  }
+  [scalerank=5] {
+    [zoom=5] { text-size: 11; }
+    [zoom=6] { text-size: 13; }
+    [zoom=7] { text-size: 14; text-wrap-width: 60; }
+    [zoom=8] { text-size: 16; text-wrap-width: 90; }
+    [zoom>=9] { text-size: 18; text-wrap-width: 120; }
+  }
+  [scalerank>=6] {
+    [zoom=7] { text-size: 12; }
+    [zoom=8] { text-size: 14; }
+    [zoom>=9] { text-size: 16; }
   }
 }
-
-#country_label_line { 
-  line-color: @text;
-  line-dasharray: 3,3;
-  line-width: 1;
-}
-
 
 
 // ---------------------------------------------------------------------
@@ -41,7 +59,7 @@
 
 // City labels with dots for low zoom levels.
 // The separate attachment keeps the size of the XML down.
-#place_label::citydots[type='city'][zoom>=4][zoom<=7][localrank<=3] {
+#place_label::citydots[type='city'][zoom>=4][zoom<=7][localrank<=2] {
   // explicitly defining all the `ldir` values wer'e going
   // to use shaves a bit off the final project.xml size
   [ldir='N'],[ldir='S'],[ldir='E'],[ldir='W'],
@@ -72,7 +90,7 @@
   }
 }
 
-#place_label[zoom>=8][localrank<=3] {
+#place_label[zoom>=8][localrank<=2] {
   text-name: @name;
   text-face-name: @sans;
   text-wrap-width: 80;
@@ -183,17 +201,47 @@
 }
 
 // Water labels
-#marine_label { 
+#marine_label[zoom>=2]["mapnik::geometry_type"=1],
+#marine_label[zoom>=2]["mapnik::geometry_type"=2] {
   text-name: @name;
-  text-face-name: @sans_bd;
+  text-face-name: @sans;
   text-fill: @text;
-  text-size: 12;
-  text-halo-fill: @water;
-  text-halo-radius: 1;
-  text-wrap-before: true;
-  text-wrap-width: 90;
-  [labelrank=1] {
-   text-size: 18;
+  ["mapnik::geometry_type"=1] {
+    text-placement: point;
+    text-wrap-width: 30;
+  }
+  ["mapnik::geometry_type"=2] {
+    text-placement: line;
+  }
+  [labelrank=1][zoom>=2],
+  [labelrank=2][zoom>=3],
+  [labelrank=3][zoom>=4],
+  [labelrank=4][zoom>=5],
+  [labelrank=5][zoom>=6],
+  [labelrank=6][zoom>=7] {
+    text-size: 11;
+    text-character-spacing: 1;
+  }
+  [labelrank=1][zoom>=3],
+  [labelrank=2][zoom>=4],
+  [labelrank=3][zoom>=5],
+  [labelrank=4][zoom>=6],
+  [labelrank=5][zoom>=7],
+  [labelrank=6][zoom>=8] {
+    text-size: 12;
+    text-character-spacing: 2;
+  }
+  [labelrank=1][zoom>=4],
+  [labelrank=2][zoom>=5],
+  [labelrank=3][zoom>=6] {
+    text-size: 14;
+    text-character-spacing: 4;
+  }
+  [labelrank=1][zoom>=5],
+  [labelrank=2][zoom>=6],
+  [labelrank=3][zoom>=7] {
+    text-size: 16;
+    text-character-spacing: 8;
   }
 }
 
