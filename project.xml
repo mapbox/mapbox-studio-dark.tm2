@@ -3,14 +3,14 @@
 <Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over" background-color="#111111">
 
 <Parameters>
-  <Parameter name="attribution"><![CDATA[<a href='https://www.mapbox.com/about/maps/' target='_blank'>&copy; Mapbox &copy; OpenStreetMap</a> <a class='mapbox-improve-map' href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a>]]></Parameter>
+  <Parameter name="attribution"><![CDATA[<a href='https://www.mapbox.com/about/maps/' target='_blank'>&copy; Mapbox</a> <a href='https://openstreetmap.org/about/' target='_blank'>&copy; OpenStreetMap</a> <a class='mapbox-improve-map' href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a>]]></Parameter>
   <Parameter name="bounds">-180,-85.0511,180,85.0511</Parameter>
   <Parameter name="center">15.293,50.8476,4</Parameter>
   <Parameter name="description"><![CDATA[A monotone basemap that's easy to recolor.]]></Parameter>
   <Parameter name="format">png8:m=h</Parameter>
   <Parameter name="maxzoom">22</Parameter>
   <Parameter name="minzoom">0</Parameter>
-  <Parameter name="name"><![CDATA[Mapbox Dark v1]]></Parameter>
+  <Parameter name="name"><![CDATA[Mapbox Dark]]></Parameter>
   <Parameter name="source"><![CDATA[mapbox:///mapbox.mapbox-terrain-v2,mapbox.mapbox-streets-v5]]></Parameter>
 </Parameters>
 
@@ -37,62 +37,6 @@
 <Layer name="landcover"
   srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
       </Layer>
-
-<Style name="landuse" filter-mode="first">
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <Filter>([class] = 'wood')</Filter>
-    <PolygonSymbolizer fill="#1d1d1d" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([class] = 'wood')</Filter>
-    <PolygonSymbolizer fill="#090909" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <Filter>([class] = 'park')</Filter>
-    <PolygonSymbolizer fill="#1d1d1d" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([class] = 'park')</Filter>
-    <PolygonSymbolizer fill="#090909" />
-  </Rule>
-  <Rule>
-    <MaxScaleDenominator>25000</MaxScaleDenominator>
-    <Filter>([class] = 'cemetery')</Filter>
-    <PolygonSymbolizer fill="#1d1d1d" />
-  </Rule>
-  <Rule>
-    <MinScaleDenominator>25000</MinScaleDenominator>
-    <Filter>([class] = 'cemetery')</Filter>
-    <PolygonSymbolizer fill="#090909" />
-  </Rule>
-  <Rule>
-    <Filter>([class] = 'school')</Filter>
-    <PolygonSymbolizer fill="#101010" />
-  </Rule>
-  <Rule>
-    <Filter>([class] = 'industrial')</Filter>
-    <PolygonSymbolizer fill="#101010" />
-  </Rule>
-  <Rule>
-    <Filter>([class] = 'hospital')</Filter>
-    <PolygonSymbolizer fill="#101010" />
-  </Rule>
-  <Rule>
-    <Filter>([class] = 'sand')</Filter>
-    <PolygonSymbolizer fill="#292929" />
-  </Rule>
-  <Rule>
-    <Filter>([class] = 'pitch')</Filter>
-    <PolygonSymbolizer fill="#292929" />
-  </Rule>
-</Style>
-<Layer name="landuse"
-  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
-    <StyleName>landuse</StyleName>  </Layer>
 
 <Style name="hillshade-2" filter-mode="first" image-filters="agg-stack-blur(4,4)" image-filters-inflate="true" comp-op="hard-light">
   <Rule>
@@ -193,6 +137,66 @@
     <StyleName>hillshade-1</StyleName>
     <StyleName>hillshade-3</StyleName>
     <StyleName>hillshade-2</StyleName>  </Layer>
+
+<Layer name="contour"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+      </Layer>
+
+<Style name="landuse" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([class] = 'wood')</Filter>
+    <PolygonSymbolizer fill="#1d1d1d" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([class] = 'wood')</Filter>
+    <PolygonSymbolizer fill="#090909" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([class] = 'park')</Filter>
+    <PolygonSymbolizer fill="#1d1d1d" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([class] = 'park')</Filter>
+    <PolygonSymbolizer fill="#090909" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([class] = 'cemetery')</Filter>
+    <PolygonSymbolizer fill="#1d1d1d" />
+  </Rule>
+  <Rule>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([class] = 'cemetery')</Filter>
+    <PolygonSymbolizer fill="#090909" />
+  </Rule>
+  <Rule>
+    <Filter>([class] = 'school')</Filter>
+    <PolygonSymbolizer fill="#101010" />
+  </Rule>
+  <Rule>
+    <Filter>([class] = 'industrial')</Filter>
+    <PolygonSymbolizer fill="#101010" />
+  </Rule>
+  <Rule>
+    <Filter>([class] = 'hospital')</Filter>
+    <PolygonSymbolizer fill="#101010" />
+  </Rule>
+  <Rule>
+    <Filter>([class] = 'sand')</Filter>
+    <PolygonSymbolizer fill="#292929" />
+  </Rule>
+  <Rule>
+    <Filter>([class] = 'pitch')</Filter>
+    <PolygonSymbolizer fill="#292929" />
+  </Rule>
+</Style>
+<Layer name="landuse"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>landuse</StyleName>  </Layer>
 
 <Style name="waterway" filter-mode="first">
   <Rule>

@@ -3,7 +3,7 @@ _prefs:
 _properties: 
   bridge: 
     "group-by": layer
-attribution: "<a href='https://www.mapbox.com/about/maps/' target='_blank'>&copy; Mapbox &copy; OpenStreetMap</a> <a class='mapbox-improve-map' href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a>"
+attribution: "<a href='https://www.mapbox.com/about/maps/' target='_blank'>&copy; Mapbox</a> <a href='https://openstreetmap.org/about/' target='_blank'>&copy; OpenStreetMap</a> <a class='mapbox-improve-map' href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a>"
 bounds: 
   - -180
   - -85.0511
@@ -16,33 +16,10 @@ center:
 description: A monotone basemap that's easy to recolor.
 format: "png8:m=h"
 interactivity_layer: ''
-layers: 
-  - landcover
-  - landuse
-  - hillshade
-  - waterway
-  - water
-  - aeroway
-  - barrier_line
-  - building
-  - landuse_overlay
-  - tunnel
-  - road
-  - bridge
-  - admin
-  - country_label_line
-  - country_label
-  - marine_label
-  - state_label
-  - place_label
-  - water_label
-  - poi_label
-  - road_label
-  - waterway_label
-  - housenum_label
+layers: null
 maxzoom: 22
 minzoom: 0
-name: Mapbox Dark v1
+name: Mapbox Dark
 source: "mapbox:///mapbox.mapbox-terrain-v2,mapbox.mapbox-streets-v5"
 styles: 
   - style.mss
