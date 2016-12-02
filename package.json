@@ -1,6 +1,6 @@
 {
-    "name": "mapbox-studio-dark",
-    "version": "2.1.1",
-    "description": "Dark basemap style for Mapbox Studio.",
-    "main": "./package.json"
+  "name": "@mapbox/mapbox-studio-dark",
+  "version": "2.1.1",
+  "description": "Dark basemap style for Mapbox Studio.",
+  "main": "./package.json"
 }
